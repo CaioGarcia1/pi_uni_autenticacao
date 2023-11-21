@@ -1,0 +1,12 @@
+<div class="text-center absolute left-1/2 transform -translate-x-1/2 w-full md:w-1/4 transition duration-700 ease-in-out z-50">
+  <% if flash[:notice] %>
+    <%= content_tag(:div, class: "md:rounded-md bg-green-500 p-4 mb-4 mx-auto", data: {controller: "flash"}) do %>
+      <%= content_tag(:div, flash[:notice], class: "text-sm text-white" ) %>
+    <% end %>
+  <% end %>
+  <% if flash[:alert] %>
+    <%= content_tag(:div, class: "md:rounded-md bg-red-500 p-4 mb-4 mx-auto", data: {controller: "flash"}) do %>
+      <%= content_tag(:div, flash[:alert], class: "text-sm text-white" ) %>
+    <% end %>
+  <% end %>
+</div>

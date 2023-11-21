@@ -1,0 +1,24 @@
+<% if Current.user %>
+  <div class="<%= request.host.include?("adm") ? "bg-red-900 " : "bg-zinc-900 "%> border-gray-200 sm:px-4 w-full">
+    <div class="container flex sm:justify-between items-center mx-auto">
+      <div class="flex-grow">
+        <%= link_to root_path do%>
+          <span class="self-center text-lg sm:text-3xl font-semibold whitespace-nowrap text-white pl-2 sm:pl-4"><%= "PI - SISTEMA LOGIN"%> </span>
+        <% end %>
+      </div>
+      <div class="flex py-3 sm:flex-row text-sm font-medium border-0 sm:pr-4">
+        <% if Current.user %>
+          <span class="mr-5 self-center font-semibold text-xs sm:text-sm whitespace-nowrap text-white hidden sm:block lg:text-base capitalize"><%= Current.user.name %></span>
+        <% end %>        
+        <%= button_to raw("SAIR&nbsp;<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6 '><path stroke-linecap='round' stroke-linejoin='round' d='M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9' /></svg>"), logout_path, method: :delete, class: "flex items-center bg-zinc-300 hover:bg-zinc-500 text-zinc-900 hover:text-zinc-50 font-semibold py-2 px-3 sm:px-4 rounded focus:outline-none focus:shadow-outline"%>
+      </div>
+  </div>
+</div>
+
+<% else %>
+  <div class=" w-full font-sans text-4xl sm:text-5xl my-10 md:text-7xl md:my-12 text-center font-medium tracking-widest text-zinc-700">
+    PI - SISTEMA LOGIN<span class="text-2xl sm:text-3xl md:text-4xl"></span>
+  </div>
+<% end %>
+
+

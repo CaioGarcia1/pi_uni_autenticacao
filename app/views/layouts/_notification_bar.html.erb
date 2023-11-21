@@ -1,0 +1,5 @@
+<% if Current.user.present?%>
+  <div id="notification-bar" class="flex justify-center bg-rose-500 cursor-pointer" style="display: none" data-controller="notification" data-action="click->notification#askNotificationPermission">
+    <div class="text-white py-1">Clique aqui para liberar notificações</div>
+  </div>
+<% end %>
