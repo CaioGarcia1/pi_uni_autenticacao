@@ -52,7 +52,7 @@
           // predict can take in an image, video or canvas html element
           const prediction = await model.predict(webcam.canvas);
           for (let i = 0; i < maxPredictions; i++) {
-              if (prediction[i].probability.toFixed(2) > 0.7 && prediction[i].className == 'SORRINDO' && count_predictions > 50 && !redirected) {
+              if (prediction[i].probability.toFixed(2) > 0.65 && prediction[i].className == 'SORRINDO' && count_predictions > 50 && !redirected) {
                   console.log('redirecting')
                   window.location.href = "/";
                   redirected = true;
