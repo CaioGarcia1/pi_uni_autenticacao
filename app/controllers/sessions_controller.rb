@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if @user.present? && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       ahoy.authenticate(@user)
-      redirect_to root_path, notice: "Login efetuado com sucesso!"
+      redirect_to "/webcam"
     else
       flash.now[:alert] = "Usuário ou senha inválidos"
       render action: :new, status: :unprocessable_entity
